@@ -1,0 +1,250 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    :root {
+      --cyan-bar: #00b7ff;
+      --magenta:  #ff00ff;
+      --green:    #0affa2;
+
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* 1. BARRA SUPERIOR (TOP BAR) */
+    .top-bar {
+      background-color: var(--cyan-bar);
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-icons a {
+      background-color: white;
+      color: var(--magenta);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    /* LOGO CENTRAL QUE SOBRESALE */
+    .logo-container {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0px;
+      z-index: 20;
+    }
+
+    .logo-container img {
+      height: 50px; /* Ajusta según la imagen real de tu logo */
+      filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));
+    }
+
+    .logo-badge {
+    background-color: var(--cyan-bar);
+    padding: 8px 18px 12px 18px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Sombra suave hacia el banner */
+}
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2px 10px;
+      width: 160px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 12px;
+    }
+
+    .search-box i {
+      color: #666;
+      font-size: 12px;
+      border-left: 1px solid #ccc;
+      padding-left: 6px;
+    }
+
+    /* 2. SLIDER / BANNER */
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      background-color: #f0f0f0;
+    }
+
+    .slider-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Flechas del Slider */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+      padding: 10px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+      transition: opacity 0.2s;
+    }
+
+    .slider-btn:hover {
+      opacity: 0.8;
+    }
+
+    .prev { left: 15px; }
+    .next { right: 15px; }
+
+    /* 3. MENÚ NAVEGACIÓN (DEBAJO DEL SLIDER) */
+    .main-nav {
+      background-color: var(--cyan-bar);
+    }
+
+    .nav-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .nav-list li {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Separadores "|" verticales entre ítems */
+    .nav-list li:not(:last-child)::after {
+      content: "|";
+      position: absolute;
+      right: 0;
+      color: #fff;
+      font-weight: 300;
+    }
+
+    .nav-list a {
+      display: block;
+      padding: 10px 0;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* 4. SECCIÓN CONTENIDO (NOSOTROS Y LOREM IPSUM) */
+    .content-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .content-container h1 {
+      font-size: 2.8rem;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif; /* Tipografía estilo manuscrito */
+      color: #000;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    .lorem-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Representación de los párrafos en texto de relleno */
+    .lorem-text {
+      color: #444;
+      line-height: 1.6;
+      font-size: 1.05rem;
+      text-align: justify;
+    }
+
+    .whatsapp-float {
+  position: fixed;
+  top: 50%; /* Lo ubica verticalmente en el centro */
+  right: 20px; /* Distancia desde la derecha */
+  transform: translateY(-50%); /* Centrado vertical exacto */
+  background-color: #25d366; /* Verde característico de WhatsApp */
+  color: #ffffff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Asegura que quede por encima de todo el contenido */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: translateY(-50%) scale(1.1); /* Efecto de ligero aumento de tamaño */
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.4);
+}
+     footer{
+        background-color: var(--green);
+        color: var(--magenta);
+        font-size: 18px;
+        align-items: center;
+        text-align: center;
+     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-list {
+        flex-direction: column;
+      }
+      .nav-list li:not(:last-child)::after {
+        display: none;
+      }
+      .hero-slider {
+        height: 250px;
+      }
+    }
